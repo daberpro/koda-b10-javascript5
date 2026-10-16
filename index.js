@@ -1,23 +1,20 @@
 function convertCelciusToAntoherBuiltIn(celcius){
 
     const hasil_konversi = [
-        {
-            name: "Reamur",
-            value: celcius * (4 / 5)
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Reamur adalah ${suhu * (4 / 5)}`);
         },
-        {
-            name: "Kelvin",
-            value: celcius + 273.15
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Kelvin adalah ${suhu + 273.15}`);
         },
-        {
-            name: "Fahrenheit",
-            value: celcius * (9/5) + 32
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Fahrenheit adalah ${suhu * (9/5) + 32}`);
         }
     ];
 
     console.log("Dengan built in foreach");
-    hasil_konversi.forEach(({name, value}) => {
-        console.log(`Hasil konversi celcius ke ${name} adalah ${value}`);
+    hasil_konversi.forEach((fn) => {
+        fn(celcius);
     });
 
 }
@@ -25,23 +22,20 @@ function convertCelciusToAntoherBuiltIn(celcius){
 function convertCelciusToAntoherManual(celcius){
 
     const hasil_konversi = [
-        {
-            name: "Reamur",
-            value: celcius * (4 / 5)
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Reamur adalah ${suhu * (4 / 5)}`);
         },
-        {
-            name: "Kelvin",
-            value: celcius + 273.15
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Kelvin adalah ${suhu + 273.15}`);
         },
-        {
-            name: "Fahrenheit",
-            value: celcius * (9/5) + 32
+        (suhu)=>{
+            console.log(`Hasil konversi celcius ke Fahrenheit adalah ${suhu * (9/5) + 32}`);
         }
     ];
 
-    console.log("Dengan for of manual");
-    for(const {name, value} of hasil_konversi){
-        console.log(`Hasil konversi celcius ke ${name} adalah ${value}`);
+    console.log("Dengan for loop");
+    for(let i = 0; i < hasil_konversi.length; i++){
+        hasil_konversi[i](celcius);
     }
 
 }
